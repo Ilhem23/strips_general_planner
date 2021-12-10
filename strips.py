@@ -2,7 +2,7 @@ import sys
 
 
 # general function to parse return the name and argument in tuple
-def general_parser(line):
+def state_parser(line):
     name = line[:line.find('(')]
     rest_of_the_line = line[line.find(')') + 1:]
     rest_of_the_line = rest_of_the_line.strip(', ')
@@ -29,7 +29,7 @@ def parser(file):
         # loop over the new string and extract the name and the argument, delete the extracted one and return
         # the new line without the extracted one
         while len(new_line):
-            name, args, new_line = general_parser(new_line)
+            name, args, new_line = state_parser(new_line)
             init_state.append((name, args))
     return init_state
 
