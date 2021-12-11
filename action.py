@@ -19,3 +19,8 @@ class Action:
 
     def print_name(self):
         print("{}({})".format(self.name, ', '.join(x for x in self.parameters)))
+
+    def print(self):
+        print(self.name, self.parameters)
+        print(self.preconditions)
+        print(self.postconditions)
