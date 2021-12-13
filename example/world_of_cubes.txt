@@ -2,22 +2,22 @@ Initial state: ONTABLE(A), ONTABLE(B), ON(C,A), CLEAR(B), CLEAR(C), HANDEMPTY(R)
 Goal state:    ON(B, C), ON(A, B)
 
 Actions:
-               // Move a disk from source to dest
+               // pickup the cube
                PickUp(X)
                Preconditions: ONTABLE(X), CLEAR(X), HANDEMPTY(R)
                Postconditions: HOLDING(X),  not ONTABLE(X), not HANDEMPTY(R)
 
-               // Move a disk from source to dest
+               // Putdown the cube in the table
                PutDown(X)
                Preconditions:  HOLDING(X)
                Postconditions: CLEAR(X), ONTABLE(X), not HOLDING(X), HANDEMPTY(R)
 
-               // Move a disk from source to dest
+               // stack the cube X in Y
                Stack(X, Y)
                Preconditions:  HOLDING(X), CLEAR(Y)
                Postconditions: HANDEMPTY(R), ON(X,Y), CLEAR(X), not HOLDING(X), not CLEAR(Y)
 
-               // unstack f
+               // unstack X
                UnStack(X, Y)
                Preconditions:  HANDEMPTY(R), ON(X,Y), CLEAR(X)
                Postconditions: HOLDING(X), CLEAR(Y), not ON(X,Y), not HANDEMPTY(R)

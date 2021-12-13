@@ -9,10 +9,10 @@ def breadth_first_search(current_state, actions, init, goal):
     time_duration = 120
     time_start = time.time()
     # create an empty FIFO queue that represent the state graph
-    # where each state is a couple: State of the world and list of actions
-    # that lead from the state of the initial world to the state in question.
+    # where each state is a tuple: State of the world and list of actions
+    # that lead from the state of the initial world to the state in goal.
     tuple_queue = queue.Queue()
-    # initialise the queue with the initial state and empty list of plan(chain of actions)
+    # initialize the queue with the initial state and empty list of plan(chain of actions)
     # the first node
     tuple_queue.put((current_state, []))
     # get the parameters in the states of initial and goal
